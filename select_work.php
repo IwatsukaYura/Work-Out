@@ -1,3 +1,15 @@
+<?php
+session_start();
+require('function_library.php');
+
+if(isset($_SESSION['form'])){
+  $form = $_SESSION['form'];
+}else{
+  header('Location: login.php');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -9,7 +21,8 @@
 </head>
 <body>
   <header>
-    <?php include('header.html') ?>
+    <a href="select_work.php"><img src="./images/logo.png" alt="ロゴの写真" class="logo-img"></a>
+    <h1>Work Out Provider</h1>
   </header>
   <div>
     <h2 class="training">トレーニングしたい部位を選択してください</h2>

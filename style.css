@@ -93,3 +93,29 @@ li img{
   font-size: 20px;
   font-weight: bold;
 }
+
+.feature {
+  display: flex;
+  justify-content: space-between;
+  width: 930px;
+  max-width: 90%;
+  margin-top: 75px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: flex-start;
+}
+
+.feature img {
+  width: 560px;
+}
+
+.feature-text {
+  max-width: 500px;
+  margin-right: 40px;
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
