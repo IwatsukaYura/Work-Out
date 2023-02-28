@@ -14,4 +14,16 @@ function dbconnect(){
   return $db;
 }
 
+//トレーニングメニューからランダムで3つ抽出して、表示する
+function select_random_training($trainig){
+  $value = [];
+  $i=0;
+  $keys = array_rand($trainig, 3);
+  foreach($keys as $key){
+    $value[$i] = $trainig[$key];
+    $i++;
+  }
+  return $value;
+}
+
 ?>
