@@ -161,3 +161,17 @@ li img{
 a{
   text-decoration: none;
 }
+
+.prepare{
+  text-align: center;
+}
+
+.prepare h3{
+  font-size: 100px;
+}
+
+.watch{
+  margin-top: 180px;
+  width: 300px;
+  height: 400px;
+}
