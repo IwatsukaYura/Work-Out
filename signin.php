@@ -10,6 +10,7 @@
     $form = [
         'name' => '',
         'password' => '',
+        'question' => '',
     ];
 }
 

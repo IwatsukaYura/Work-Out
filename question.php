@@ -1,3 +1,36 @@
+<?php
+require('function_library.php');
+session_start();
+
+if(isset($_SESSION['form'])){
+  $form = $_SESSION['form'];
+}else{
+  header('Location: login.php');
+}
+
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+  $form['question'] = filter_input(INPUT_POST,'question', FILTER_SANITIZE_STRING);
+  if($form['question'] === ''){
+    $error['question'] = 'blank';
+  }else{
+    $db = dbconnect();
+    $stmt = $db->prepare('insert into questions (user_name,question) value (?,?)');
+    if(!$stmt){
+      die($db->error);
+    }
+    $stmt->bind_param('ss', $form['name'],$form['question']);
+    $success = $stmt->execute();
+
+    if(!$success){
+      die($db->error);
+    }
+
+  }
+
+  
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -50,7 +83,10 @@
     <div class="what">
       <form action="" method="POST">
         <p>ほかに疑問点があれば気軽に送信してください。</p>
-        <textarea name="question" cols="30" rows="10"></textarea>
+        <textarea name="question" cols="30" rows="10"></textarea><br>
+        <?php if($error['question'] === 'blank'): ?>
+          <p class="error" style="color : red;">※質問を入力してから送信してください</p>
+        <?php endif;?>
         <input type="submit" value="送信する">
       </form>
     </div>
