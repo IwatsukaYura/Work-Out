@@ -32,6 +32,14 @@ if(isset($_GET['part']) && $_GET['part'] === 'arms'){
   $training_explain = return_arm_training_explain();
   $training = select_random_training($arm_training);
 }
+
+if(isset($_SESSION['form'])){
+  $form = $_SESSION['form'];
+}else{
+  header('Location: login.php');
+}
+
+
 ?>
 
 <!DOCTYPE html>

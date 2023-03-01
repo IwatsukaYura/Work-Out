@@ -78,6 +78,7 @@
     <?php include("header.html") ?>
   </header>
   <main>
+    <a href="./login.php"><p class="create_account">ログイン画面へ</p></a>
     <h2 class="sign-in">サインイン</h2>
     <form action="" method="post">
     <dl>
