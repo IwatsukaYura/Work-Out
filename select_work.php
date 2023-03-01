@@ -21,7 +21,7 @@ if(isset($_SESSION['form'])){
 </head>
 <body>
   <header>
-    <a href="select_work.php"><img src="./images/logo.png" alt="ロゴの写真" class="logo-img"></a>
+    <a href="home.php"><img src="./images/logo.png" alt="ロゴの写真" class="logo-img"></a>
     <h1>Work Out Provider</h1>
   </header>
   <div>

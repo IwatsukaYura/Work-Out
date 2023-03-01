@@ -17,16 +17,19 @@ if(isset($_GET['part']) && $_GET['part'] === 'back'){
 
 if(isset($_GET['part']) && $_GET['part'] === 'leg'){
   $leg_training = return_leg_training();
+  $training_explain = return_leg_training_explain();
   $training = select_random_training($leg_training);
 }
 
 if(isset($_GET['part']) && $_GET['part'] === 'sholder'){
   $sholder_training = return_sholder_training();
+  $training_explain = return_sholder_training_explain();
   $training = select_random_training($sholder_training);
 }
 
-if(isset($_GET['part']) && $_GET['part'] === 'arm'){
+if(isset($_GET['part']) && $_GET['part'] === 'arms'){
   $arm_training = return_arm_training();
+  $training_explain = return_arm_training_explain();
   $training = select_random_training($arm_training);
 }
 ?>
