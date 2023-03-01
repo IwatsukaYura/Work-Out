@@ -8,9 +8,52 @@
   <title>Document</title>
 </head>
 <body>
-  <div class="prepare">
-    <img src="./images/prepare.png" alt="" class="watch">
-    <h3>Coming Soon!!!!</h3>
+  <header>
+    <a href="home.php"><img src="./images/logo.png" alt="ロゴの写真" class="logo-img"></a>
+    <h1>Work Out Provider</h1>
+  </header>
+  <div class="QA_contents">
+    <div class="QA">
+      <details class="qa-007">
+        <summary>このアプリでなにができるの？</summary>
+        <p>筋トレ初心者に向けて部位別にランダムでトレーニングメニューを自動的に組んでくれます。<br>何から始めたらいいかわからない方は、このアプリで決められたメニューから始めてみましょう。</p>
+      </details>
+      <details class="qa-007">
+          <summary>各種目の重量や回数、セット数はどれくらいやればいいの？</summary>
+          <p>7～10回で限界が来る重さで3セットから始めてみましょう。</p>
+      </details>
+      <details class="qa-007">
+          <summary>セット間の休憩はどれくらいとればいいですか？</summary>
+          <p>2~3分くらいを目安にしましょう。</p>
+      </details>
+      <details class="qa-007">
+          <summary>トレーニングをするタイミングはいつがベスト?</summary>
+          <p>空腹状態では行かないようにしましょう！  ご飯を食べてから60~90分後に開始するとベストです。</p>
+      </details>
+      <details class="qa-007">
+          <summary>週何回トレーニングすればいいの？</summary>
+          <p>初心者の方は週3回くらいから始めてみましょう！</p>
+      </details>
+      <details class="qa-007">
+          <summary>筋肉痛がある状態でその部位の筋トレはしていいのですか？</summary>
+          <p>>筋肉痛があるときはその部位のトレーニングは避けましょう。筋肉痛というのは筋繊維が壊れている状態ですので、筋肉痛が治るまではそれ以上イジメないであげてください</p>
+      </details>
+      <details class="qa-007">
+          <summary>瘦せたいんですけど、有酸素運動はしなくていいんですか？</summary>
+          <p>基本的には有酸素運動をしなくても痩せます。筋トレをして、食事を見直すことを推奨します。</p>
+      </details>
+      <details class="qa-007">
+          <summary>どんな食事をすれば痩せますか？</summary>
+          <p>ここでは解答しきれませんので個別にご連絡ください。その人に合った食事メニューをご提案いたします。</p>
+      </details>
+    </div>
+    <div class="what">
+      <form action="" method="POST">
+        <p>ほかに疑問点があれば気軽に送信してください。</p>
+        <textarea name="question" cols="30" rows="10"></textarea>
+        <input type="submit" value="送信する">
+      </form>
+    </div>
   </div>
 </body>
 </html>
