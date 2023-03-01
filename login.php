@@ -31,7 +31,7 @@
     if(empty($error)){
       $_SESSION['form'] = $form;
 
-      header('Location: select_work.php');
+      header('Location: home.php');
       exit();
     }
   }
