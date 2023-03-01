@@ -1,5 +1,5 @@
 # name
-Work-Out=proveider
+Work-Out-proveider
 
 image or gif
 
