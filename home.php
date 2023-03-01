@@ -24,7 +24,7 @@
         <p class="content">トレーニング</p>
       </div>
     </a>
-    <a href="">
+    <a href="note.php">
       <div class="border-radius">
         <img src="./images/note.png" alt="">
         <p class="content">記録</p>
