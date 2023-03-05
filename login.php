@@ -60,14 +60,14 @@
       <dl>
         <dt>ニックネーム<span class="required">※必須</span></dt>
           <dd>
-            <input type="text" name="name"  style="width: 400px; height: 65px;" maxlength="255"  placeholder="名前を入力してください" value="<?php echo h($form['name']); ?>"/>
+            <input type="text" name="name"  style="width: 400px; height: 65px;" maxlength="255"  placeholder="名前を入力してください" value="<?php echo h($name); ?>"/>
             <?php if(isset($error['login']) && $error['login'] === 'blank'): ?>
               <p class="error" style="color : red;">* ニックネームまたはパスワードが記入されていません</p>
             <?php endif; ?>
           </dd>
         <dt>パスワード<span class="required">※必須</span></dt>
           <dd>
-          <input type="password" name="password" style="width: 400px; height: 65px;" maxlength="255" value="<?php echo h($form['password']); ?>" placeholder="パスワードを入力してください"/>
+          <input type="password" name="password" style="width: 400px; height: 65px;" maxlength="255" value="<?php echo h($password); ?>" placeholder="パスワードを入力してください"/>
           <?php if(isset($error['login']) && $error['login'] === 'failed'): ?>
             <p class='error' style="color : red;">* ログイン失敗 正しく記入してください。</p>
           <?php endif; ?>
