@@ -2,37 +2,39 @@
   session_start();
   require('function_library.php');
 
-  if(isset($_GET['action']) && $_GET['action'] === 'rewrite' && isset($_SESSION['form'])){
-    $form = $_SESSION['form'];
-} else{
-    $form = [
-        'name' => '',
-        'password' => '',
-    ];
-}
-
 
   $error=[];
+  $name = '';
+  $password = '';
+
   //フォーム内容のチェック
   if($_SERVER['REQUEST_METHOD'] === 'POST'){
-    $form['name'] = filter_input(INPUT_POST,'name', FILTER_SANITIZE_STRING);
-    if($form['name'] === ''){
-      $error['name'] = 'blank';
-    }
+    $name = filter_input(INPUT_POST,'name', FILTER_SANITIZE_STRING);
+    $password = filter_input(INPUT_POST,'password', FILTER_SANITIZE_STRING);
+    if($name ==='' || $password === ''){
+      $error['login'] = 'blank';
+    }else{
+      $db = dbconnect();
+      $stmt = $db->prepare('select password from members where name=? limit 1');
+      if(!$stmt){
+        $db->error;
+      }
+      $stmt->bind_param('s', $name);
+      $success = $stmt->execute();
+      if(!$success){
+        $db->error;
+      }
+      $stmt->bind_result($hash);
+      $stmt->fetch();
 
-    $form['password'] = filter_input(INPUT_POST,'password', FILTER_SANITIZE_STRING);
-    if($form['password'] === ''){
-      $error['password'] = 'blank';
-    }
-    else if(strlen($form['password']) < 4){
-      $error['password'] = 'length';
-    }
-
-    if(empty($error)){
-      $_SESSION['form'] = $form;
-
-      header('Location: home.php');
-      exit();
+      if(password_verify($password, $hash)){
+        session_regenerate_id();
+        
+        header('Location: home.php');
+        exit();
+      }else{
+        $error['login'] = 'failed';
+      }
     }
   }
 ?>
@@ -59,18 +61,15 @@
         <dt>ニックネーム<span class="required">※必須</span></dt>
           <dd>
             <input type="text" name="name"  style="width: 400px; height: 65px;" maxlength="255"  placeholder="名前を入力してください" value="<?php echo h($form['name']); ?>"/>
-            <?php if(isset($error['name']) && $error['name'] === 'blank'): ?>
-              <p class="error" style="color : red;">* ニックネームを入力してください</p>
+            <?php if(isset($error['login']) && $error['login'] === 'blank'): ?>
+              <p class="error" style="color : red;">* ニックネームまたはパスワードが記入されていません</p>
             <?php endif; ?>
           </dd>
         <dt>パスワード<span class="required">※必須</span></dt>
           <dd>
           <input type="password" name="password" style="width: 400px; height: 65px;" maxlength="255" value="<?php echo h($form['password']); ?>" placeholder="パスワードを入力してください"/>
-          <?php if(isset($form['password']) && $error['password'] === 'blank'): ?>
-            <p class='error' style="color : red;">* パスワードを入力してください</p>
-          <?php endif; ?>
-          <?php if(isset($form['password']) && $error['password'] === 'length'):?>
-            <p class="error" style="color : red;">* パスワードは4文字以上で入力してください</p>
+          <?php if(isset($error['login']) && $error['login'] === 'failed'): ?>
+            <p class='error' style="color : red;">* ログイン失敗 正しく記入してください。</p>
           <?php endif; ?>
           </dd>
       </dl>
