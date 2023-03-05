@@ -45,6 +45,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     <a href="home.php"><img src="./images/logo.png" alt="ロゴの写真" class="logo-img"></a>
     <h1>Work Out Provider</h1>
   </header>
+  <a href="home.php">←戻る</a>
+  <br>
+  <br>
   <div class="QA_contents">
     <div class="QA">
       <details class="qa-007">

@@ -8,6 +8,9 @@
   <title>Document</title>
 </head>
 <body>
+  <a href="home.php">←戻る</a>
+  <br>
+  <br>
   <div class="prepare">
     <img src="./images/prepare.png" alt="" class="watch">
     <h3>Coming Soon!!!!</h3>

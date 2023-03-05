@@ -56,7 +56,9 @@ if(isset($_SESSION['form'])){
     <a href="select_work.php"><img src="./images/logo.png" alt="ロゴの写真" class="logo-img"></a>
     <h1>Work Out Provider</h1>
   </header>
-
+  <a href="select_work.php">←戻る</a>
+  <br>
+  <br>
   <div class="feature">
       <div class="feature-text">
         <?php $training_name =$training[0]; ?>
