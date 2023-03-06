@@ -3,6 +3,13 @@ session_start();
 require('function_library.php');
 require('training_set.php');
 
+if(isset($_SESSION['id']) && $_SESSION['name']){
+  $id = $_SESSION['id'];
+  $name = $_SESSION['name'];
+}else{
+  header('Location: login.php');
+}
+
 if(isset($_GET['part']) && $_GET['part'] === 'chest'){
   $chest_training = return_chest_training();
   $training_explain = return_chest_training_explain();
@@ -32,13 +39,6 @@ if(isset($_GET['part']) && $_GET['part'] === 'arms'){
   $training_explain = return_arm_training_explain();
   $training = select_random_training($arm_training);
 }
-
-if(isset($_SESSION['form'])){
-  $form = $_SESSION['form'];
-}else{
-  header('Location: login.php');
-}
-
 
 ?>
 

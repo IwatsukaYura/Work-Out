@@ -2,11 +2,14 @@
 require('function_library.php');
 session_start();
 
-if(isset($_SESSION['form'])){
-  $form = $_SESSION['form'];
+if(isset($_SESSION['id']) && $_SESSION['name']){
+  $id = $_SESSION['id'];
+  $name = $_SESSION['name'];
 }else{
   header('Location: login.php');
 }
+
+$form = ['question' => ''];
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
   $form['question'] = filter_input(INPUT_POST,'question', FILTER_SANITIZE_STRING);
@@ -18,7 +21,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     if(!$stmt){
       die($db->error);
     }
-    $stmt->bind_param('ss', $form['name'],$form['question']);
+    $stmt->bind_param('ss', $name,$form['question']);
     $success = $stmt->execute();
 
     if(!$success){
@@ -72,7 +75,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
       </details>
       <details class="qa-007">
           <summary>筋肉痛がある状態でその部位の筋トレはしていいのですか？</summary>
-          <p>>筋肉痛があるときはその部位のトレーニングは避けましょう。筋肉痛というのは筋繊維が壊れている状態ですので、筋肉痛が治るまではそれ以上イジメないであげてください</p>
+          <p>筋肉痛があるときはその部位のトレーニングは避けましょう。筋肉痛というのは筋繊維が壊れている状態ですので、筋肉痛が治るまではそれ以上イジメないであげてください</p>
       </details>
       <details class="qa-007">
           <summary>瘦せたいんですけど、有酸素運動はしなくていいんですか？</summary>

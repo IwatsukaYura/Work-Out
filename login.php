@@ -15,7 +15,7 @@
       $error['login'] = 'blank';
     }else{
       $db = dbconnect();
-      $stmt = $db->prepare('select password from members where name=? limit 1');
+      $stmt = $db->prepare('select id,password from members where name=? limit 1');
       if(!$stmt){
         $db->error;
       }
@@ -24,12 +24,13 @@
       if(!$success){
         $db->error;
       }
-      $stmt->bind_result($hash);
+      $stmt->bind_result($id, $hash);
       $stmt->fetch();
 
       if(password_verify($password, $hash)){
         session_regenerate_id();
-        
+        $_SESSION['id'] = $id;
+        $_SESSION['name'] = $name;
         header('Location: home.php');
         exit();
       }else{
