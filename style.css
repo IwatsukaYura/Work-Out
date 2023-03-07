@@ -162,23 +162,16 @@ a{
   text-decoration: none;
 }
 
-
-/* ComingSoonを作成するためのCSSです。ここから */
-.prepare{
+.rounded-corner {
+  width: 140px;
+  height: 140px;
+  background: #ffa500;
+  border-radius: 50%;
   text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
 }
-
-.prepare h3{
-  font-size: 100px;
-}
-
-.watch{
-  margin-top: 180px;
-  width: 300px;
-  height: 400px;
-}
-
-/* ここまで */
 
 .qa-007 {
   width: 900px;
@@ -256,4 +249,24 @@ a{
 
 .what{
   margin-left: 100px;
+}
+
+.thanks{
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.thanks h2{
+  font-size: 40px;
+  letter-spacing: 5px;
+}
+
+.thanks h4{
+  font-size: 25px;
+  letter-spacing: 4px;
+}
+
+.thanksletter{
+  padding-right: 50px;
 }

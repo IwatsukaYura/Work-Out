@@ -40,6 +40,27 @@ if(isset($_GET['part']) && $_GET['part'] === 'arms'){
   $training = select_random_training($arm_training);
 }
 
+
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+  $fit1 = $_POST['fit1'];
+  $fit2 = $_POST['fit2'];
+  $fit3 = $_POST['fit3'];
+
+  $db = dbconnect();
+  $stmt = $db->prepare('insert into fitness (user_name, fit1, fit2, fit3) value (?,?,?,?)');
+  if(!$stmt){
+    die($db->error);
+  }
+  $stmt->bind_param('ssss', $name, $fit1, $fit2, $fit3);
+  $success = $stmt->execute();
+  if(!$success){
+    die($db->error);
+  }
+
+  header('Location: thanks.php');
+
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -84,6 +105,15 @@ if(isset($_GET['part']) && $_GET['part'] === 'arms'){
       <img src="./images/work3.png" alt="運動1">
   </div>
   
+  <form action="" method="POST">
+    <input type="hidden" value=<?php echo $training[0] ?> name="fit1">
+    <input type="hidden" value=<?php echo $training[1] ?> name="fit2">
+    <input type="hidden" value=<?php echo $training[2] ?> name="fit3">
+    <input type="hidden" value=<?php echo $id ?> name="id">
+    <input type="hidden" value=<?php echo $name ?> name="name">
+    <input type="submit" value='トレーニング完了' class="rounded-corner">
+    
+  </form>
 
 </body>
 </html>
