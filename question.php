@@ -16,6 +16,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
   if($form['question'] === ''){
     $error['question'] = 'blank';
   }else{
+    $error['question'] = 'thanks';
     $db = dbconnect();
     $stmt = $db->prepare('insert into questions (user_name,question) value (?,?)');
     if(!$stmt){
@@ -92,6 +93,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         <textarea name="question" cols="30" rows="10"></textarea><br>
         <?php if($error['question'] === 'blank'): ?>
           <p class="error" style="color : red;">※質問を入力してから送信してください</p>
+        <?php endif;?>
+        <?php if($error['question'] === 'thanks'): ?>
+          <p class="error" style="color : red;">ご意見ありがとうございます。</p>
         <?php endif;?>
         <input type="submit" value="送信する">
       </form>
