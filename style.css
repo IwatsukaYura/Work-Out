@@ -270,3 +270,35 @@ a{
 .thanksletter{
   padding-right: 50px;
 }
+
+.border-radius2 {
+  border: 5px solid #B70F0F;
+  width: 150px;
+  height: 150px;
+  background-color: white;
+  border-radius: 30px;
+  color: black;
+  text-align: center;  
+  margin-left: 40px;
+}
+
+
+
+.border-radius2 img{
+  margin-top: 0px;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+}
+
+.thanks-content{
+  font-size: 20px;
+}
+
+.select{
+  display: flex;
+  text-align: center;
+  align-items: center;
+}

@@ -30,6 +30,20 @@ if(isset($_SESSION['id']) && $_SESSION['name']){
     <div class='thanksletter'>
       <h2>今日もお疲れ様でした。</h2>
       <h4>よくがんばりましたね</h4>
+      <div class="select">
+        <a href="note.php">
+          <div class="border-radius2">
+            <img src="./images/note.png" alt="">
+            <p class="thanks-content">記録を見る</p>
+          </div>
+        </a>
+        <a href="home.php">
+          <div class="border-radius2">
+            <img src="./images/HOME.png" alt="">
+            <p class="thanks-content">ホーム画面へ</p>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
 </body>
