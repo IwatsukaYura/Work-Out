@@ -8,6 +8,24 @@ if(isset($_SESSION['id']) && $_SESSION['name']){
 }else{
   header('Location: login.php');
 }
+
+$db=dbconnect();
+$stmt = $db->prepare('select count(*) from fitness where user_name=?');
+
+if(!$stmt){
+  die($db->error);
+}
+
+$stmt->bind_param('s', $name);
+$success = $stmt->execute();
+
+if(!$success){
+  die($db->error);
+}
+
+$stmt->bind_result($total_days);
+$stmt->fetch();
+
 ?>
 
 <!DOCTYPE html>
@@ -24,6 +42,35 @@ if(isset($_SESSION['id']) && $_SESSION['name']){
     <a href="home.php"><img src="./images/logo.png" alt="ロゴの写真" class="logo-img"></a>
     <h1>Work Out Provider</h1>
   </header>
+  <?php
+    $db=dbconnect();
+    $stmt = $db->prepare('select fit1,fit2,fit3,time from fitness where user_name=?');
 
+    if(!$stmt){
+      die($db->error);
+    }
+
+    $stmt->bind_param('s', $name);
+    $success = $stmt->execute();
+
+    if(!$success){
+      die($db->error);
+    }
+    $stmt->bind_result($fit1,$fit2,$fit3,$time);
+  ?> 
+  <?php for($i=0;$i<$total_days;$i++):?>
+    <?php $stmt->fetch(); ?>
+    <div class="qa_contents">
+      <div class="QA">
+        <details class="qa-007">
+          <summary><?php echo mb_substr($time, 0 , 10); ?></summary>
+          <br>
+          <p><?php echo $fit1; ?></p>
+          <p><?php echo $fit2; ?></p>
+          <p><?php echo $fit3; ?></p>
+        </details>
+      </div>
+    </div>
+  <?php endfor;?>
 </body>
 </html>
