@@ -27,6 +27,11 @@ dd {
 	margin-bottom: 0.5em;
 }
 
+.user_info{
+  width: 400px;
+  height: 65px;
+}
+
 .required {
 	color: #BB1850;
 	font-size: 90%;
@@ -78,7 +83,6 @@ padding-top: 10px;
   display: flex;
   justify-content: space-evenly;
   text-align: center;
-
 }
 
 li {
@@ -301,4 +305,199 @@ a{
   display: flex;
   text-align: center;
   align-items: center;
+}
+
+
+.qa-007 {
+  width: 900px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 4px rgb(0 0 0 / 2%), 0 2px 3px -2px rgba(0 0 0 / 5%);
+  background-color: #fff;
+}
+
+.qa-007 summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 1em 2em 1em 7em;
+  color: #333333;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.qa-007 summary::before,
+.qa-007 p::before {
+  position: absolute;
+  left: 1em;
+  font-weight: 600;
+  font-size: 1.3em;
+}
+
+.qa-007 summary::before {
+  color: #75bbff;
+  content: "DATE";
+}
+
+.qa-007 summary::after {
+  transform: translateY(-25%) rotate(45deg);
+  width: 7px;
+  height: 7px;
+  margin-left: 10px;
+  border-bottom: 3px solid #333333b3;
+  border-right: 3px solid #333333b3;
+  content: '';
+  transition: transform .5s;
+}
+
+.qa-007[open] summary::after {
+  transform: rotate(225deg);
+}
+
+.qa-007 p {
+  position: relative;
+  transform: translateY(-10px);
+  opacity: 0;
+  margin: 0;
+  padding: .3em 3em 1.5em 10em;
+  color: #333;
+  transition: transform .5s, opacity .5s;
+  font-weight: bold;
+}
+
+.qa-007[open] p {
+  transform: none;
+  opacity: 1;
+}
+
+.qa-007 p::before {
+  color: #ff8d8d;
+  line-height: 1.2;
+  content: "TRAINIG";
+}
+
+.qa_contents{
+  display: flex;
+}
+
+
+
+
+@media screen and (max-width: 480px) {
+	/* 480px以下に適用されるCSS（スマホ用） */
+
+  header{
+    height: 120px;
+    background-color: #B70F0F;
+    display: flex;
+    align-items: center;
+  }
+  header h1{
+    font-size: 24px;
+    padding-right: 19px;
+  }
+  .logo-img{
+    width: 150px;
+    height: 100px;
+    padding-left: 20px;
+  }
+
+  .required {
+    color: #BB1850;
+    font-size: 90%;
+    padding: 2px;
+    margin-left: 10px;
+  }
+  
+  .error{
+    color: #BB1850;
+  }
+  
+  .sign-in{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 30px;
+  }
+
+  dl {
+    margin-bottom: 10px;
+  }
+  dt {
+    padding-left: 5px;
+    margin-bottom: 5px;
+  }
+  dd {
+    margin-bottom: 0.5em;
+  }
+
+  form{
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  form dd{
+    margin-bottom: 50px;
+    margin-right: 55px;
+  }
+  
+  .create_user{
+    background-color: #CC3300;
+    width: 150px;
+    height: 80px;
+  }
+  
+  .create_account{
+   text-align: right;
+  padding-right: 20px;
+  padding-top: 10px;
+  }
+
+  .user_info{
+    width: 200px;
+    height: 45px;
+  }
+
+  .training{
+    font-size: 16px;
+    color: #B70F0F;
+    text-align: center;
+  }
+  
+  .select_work{
+    margin-top: 50px;
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+    overflow-x: scroll;
+  }
+
+  .select_work::-webkit-scrollbar {
+    height: 14px; /* スクロールバーの高さ */
+  }
+   
+  .select_work::-webkit-scrollbar-thumb {
+    background: #d2b48c; /* ツマミの色 */
+    border-radius: 7px; /* ツマミ両端の丸み */
+  }
+   
+  .select_work::-webkit-scrollbar-track {
+    background: #f5deb3; /* トラックの色 */
+    border-radius: 7px; /* トラック両端の丸み */
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  li img{
+    height: 240px;
+  }
+  
+  .select_work p{
+    font-size: 20px;
+    font-weight: bold;
+  }
 }
