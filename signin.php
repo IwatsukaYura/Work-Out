@@ -85,7 +85,7 @@
     <dl>
         <dt>ニックネーム<span class="required">※必須</span></dt>
           <dd>
-            <input type="text" name="name"  style="width: 400px; height: 65px;" maxlength="255"  placeholder="名前を入力してください" value="<?php echo h($form['name']); ?>"/>
+            <input class = "user_info" type="text" name="name"  maxlength="255"  placeholder="名前を入力してください" value="<?php echo h($form['name']); ?>"/>
             <?php if(isset($error['name']) && $error['name'] === 'blank'): ?>
               <p class="error" style="color : red;">* ニックネームを入力してください</p>
             <?php endif; ?>
@@ -95,7 +95,7 @@
           </dd>
         <dt>パスワード<span class="required">※必須</span></dt>
           <dd>
-          <input type="password" name="password" style="width: 400px; height: 65px;" maxlength="255" value="<?php echo h($form['password']); ?>" placeholder="4文字以上のパスワードを入力してください"/>
+          <input class = "user_info" type="password" name="password" maxlength="255" value="<?php echo h($form['password']); ?>" placeholder="4文字以上のパスワードを入力してください"/>
           <?php if(isset($form['password']) && $error['password'] === 'blank'): ?>
             <p class='error' style="color : red;">* パスワードを入力してください</p>
           <?php endif; ?>
