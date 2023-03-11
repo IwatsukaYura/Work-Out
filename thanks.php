@@ -26,7 +26,7 @@ if(isset($_SESSION['id']) && $_SESSION['name']){
   </header>
 
   <div class="thanks">
-    <img src="./images/thanks.png" alt="ばいばいする写真">
+    <img src="./images/thanks.png" alt="ばいばいする写真" class="bye">
     <div class='thanksletter'>
       <h2>今日もお疲れ様でした。</h2>
       <h4>よくがんばりましたね</h4>
