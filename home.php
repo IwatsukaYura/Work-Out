@@ -23,7 +23,14 @@ if(isset($_SESSION['id']) && $_SESSION['name']){
 <body>
   <header>
     <a href="home.php"><img src="./images/logo.png" alt="ロゴの写真" class="logo-img"></a>
-    <h1>Work Out Provider</h1>
+    <div class='logout-header'>
+      <h1>Work Out Provider</h1>
+      <div class="logout">
+        <a href="logout.php">
+          <img src="./images/logout.png" alt="">
+        </a>
+      </div>
+    </div>
   </header>
   <div class="intro">
     <p>筋トレを始めたけど</p>

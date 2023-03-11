@@ -1,4 +1,4 @@
-/* body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}input,button,textarea,select{*font-size:100%;} */
+/* body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}input,button,textarea,select{*font-size:100%;}  */
 
 header{
   height: 237px;
@@ -383,6 +383,20 @@ a{
   display: flex;
 }
 
+.logout-header{
+  display: flex;
+  
+}
+
+.logout-header img{
+  height: 40px;
+
+}
+
+.logout{
+  padding-left: 70px;
+  padding-bottom: 20px;
+}
 
 
 
@@ -621,4 +635,44 @@ a{
     text-align: center;
     align-items: center;
   }
+
+  .qa-007 {
+    width: 360px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 4px rgb(0 0 0 / 2%), 0 2px 3px -2px rgba(0 0 0 / 5%);
+    background-color: #fff;
+  }
+  .qa-008 {
+    width: 360px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 4px rgb(0 0 0 / 2%), 0 2px 3px -2px rgba(0 0 0 / 5%);
+    background-color: #fff;
+  }
+
+  .QA_contents{
+    display: block;
+    
+  }
+
+  .what{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .logout-header img{
+    height: 20px;
+  }
+  
+  .logout{
+    padding-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+  
 }
