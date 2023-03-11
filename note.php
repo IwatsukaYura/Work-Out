@@ -42,6 +42,9 @@ $stmt->fetch();
     <a href="home.php"><img src="./images/logo.png" alt="ロゴの写真" class="logo-img"></a>
     <h1>Work Out Provider</h1>
   </header>
+  <a href="home.php">←戻る</a>
+  <br>
+  <br>
   <?php
     $db=dbconnect();
     $stmt = $db->prepare('select fit1,fit2,fit3,time from fitness where user_name=?');
@@ -62,7 +65,7 @@ $stmt->fetch();
     <?php $stmt->fetch(); ?>
     <div class="qa_contents">
       <div class="QA">
-        <details class="qa-007">
+        <details class="qa-008">
           <summary><?php echo mb_substr($time, 0 , 10); ?></summary>
           <br>
           <p><?php echo $fit1; ?></p>
