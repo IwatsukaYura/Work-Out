@@ -308,7 +308,7 @@ a{
 }
 
 
-.qa-007 {
+.qa-008 {
   width: 900px;
   margin-top: 10px;
   margin-bottom: 30px;
@@ -318,7 +318,7 @@ a{
   background-color: #fff;
 }
 
-.qa-007 summary {
+.qa-008 summary {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -329,20 +329,20 @@ a{
   cursor: pointer;
 }
 
-.qa-007 summary::before,
-.qa-007 p::before {
+.qa-008 summary::before,
+.qa-008 p::before {
   position: absolute;
   left: 1em;
   font-weight: 600;
   font-size: 1.3em;
 }
 
-.qa-007 summary::before {
+.qa-008 summary::before {
   color: #75bbff;
   content: "DATE";
 }
 
-.qa-007 summary::after {
+.qa-008 summary::after {
   transform: translateY(-25%) rotate(45deg);
   width: 7px;
   height: 7px;
@@ -353,11 +353,11 @@ a{
   transition: transform .5s;
 }
 
-.qa-007[open] summary::after {
+.qa-008[open] summary::after {
   transform: rotate(225deg);
 }
 
-.qa-007 p {
+.qa-008 p {
   position: relative;
   transform: translateY(-10px);
   opacity: 0;
@@ -368,12 +368,12 @@ a{
   font-weight: bold;
 }
 
-.qa-007[open] p {
+.qa-008[open] p {
   transform: none;
   opacity: 1;
 }
 
-.qa-007 p::before {
+.qa-008 p::before {
   color: #ff8d8d;
   line-height: 1.2;
   content: "TRAINIG";
@@ -423,14 +423,14 @@ a{
   }
 
   dl {
-    margin-bottom: 10px;
+    margin-bottom: 7px;
   }
   dt {
-    padding-left: 5px;
-    margin-bottom: 5px;
+    padding-left: 3px;
+    margin-bottom: 3px;
   }
   dd {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.2em;
   }
 
   form{
@@ -499,5 +499,126 @@ a{
   .select_work p{
     font-size: 20px;
     font-weight: bold;
+  }
+
+  .intro{
+    margin-top: 10px;
+  }
+  
+  .intro p{
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .contents{
+    
+    display: block;
+    margin-top: 10px;
+  }
+
+  .border-radius {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    border: 5px solid #B70F0F;
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border-radius: 30px;
+    color: black;
+    text-align: center;  
+  }
+  
+  .border-radius p{
+    font-size: 20px;
+  }
+  
+  .border-radius img{
+    margin-top: 7px;
+    height: 130px;
+    width: 140px;
+    text-align: center;
+  }
+
+  .select_work p{
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .feature {
+    display: flex;
+    justify-content: space-between;
+    width: 330px;
+    max-width: 90%;
+    margin-top: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: flex-start;
+  }
+  
+  .feature img {
+    width: 180px;
+    padding-top: 40px;
+  }
+  
+  .feature-text {
+    max-width: 240px;
+    margin-right: 10px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .rounded-corner {
+    width: 100px;
+    height: 100px;
+    background: #ffa500;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 10px;
+    cursor: pointer;
+  }
+
+  .thanks{
+    display: block;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .bye{
+    width: 200px;
+  }
+  .thanks h2{
+    font-size: 28px;
+    letter-spacing: 3px;
+    
+  }
+  
+  .thanks h4{
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+  
+  .thanksletter{
+    padding-right: 0;
+  }
+  
+  .border-radius2 {
+    border: 5px solid #B70F0F;
+    width: 150px;
+    height: 150px;
+    background-color: white;
+    border-radius: 30px;
+    color: black;
+    text-align: center;  
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+  }
+  
+  .select{
+    display: block;
+    text-align: center;
+    align-items: center;
   }
 }
