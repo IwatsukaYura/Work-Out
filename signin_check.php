@@ -26,7 +26,7 @@
     }
   
     unset($_SESSION['form']);
-    header('Location: login.php');
+    header('Location: index.php');
   
   }
 ?>

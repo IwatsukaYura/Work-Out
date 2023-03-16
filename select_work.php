@@ -6,7 +6,7 @@ if(isset($_SESSION['id']) && $_SESSION['name']){
   $id = $_SESSION['id'];
   $name = $_SESSION['name'];
 }else{
-  header('Location: login.php');
+  header('Location: index.php');
 }
 ?>
 
@@ -32,23 +32,23 @@ if(isset($_SESSION['id']) && $_SESSION['name']){
   </div>
   <ul class="select_work">
     <div>
-      <a href="training.php?part=chest"><li><img src="./images/筋肉1.png" alt="筋肉の画像"></li></a>
+      <a href="training.php?part=chest"><li><img src="./images/mascle1.png" alt="筋肉の画像"></li></a>
       <p>胸</p>
     </div>
     <div>
-      <a href="training.php?part=back"><li><img src="./images/筋肉2.png" alt="筋肉の画像"></li></a>
+      <a href="training.php?part=back"><li><img src="./images/mascle2.png" alt="筋肉の画像"></li></a>
       <p>背中</p>
     </div>
     <div>
-      <a href="training.php?part=leg"><li><img src="./images/筋肉3.png" alt="筋肉の画像"></li></a>
+      <a href="training.php?part=leg"><li><img src="./images/mascle3.png" alt="筋肉の画像"></li></a>
       <p>脚</p>
     </div>
     <div>
-      <a href="training.php?part=sholder"><li><img src="./images/筋肉4.png" alt="筋肉の画像"></li></a>
+      <a href="training.php?part=sholder"><li><img src="./images/mascle4.png" alt="筋肉の画像"></li></a>
       <p>肩</p>
     </div>
     <div>
-    <a href="training.php?part=arms"><li><img src="./images/筋肉5.png" alt="筋肉の画像"></li></a>
+    <a href="training.php?part=arms"><li><img src="./images/mascle5.png" alt="筋肉の画像"></li></a>
       <p>腕</p>
     </div>
   </ul>
