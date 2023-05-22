@@ -37,7 +37,9 @@
 【開発環境】
 Windows10
 
-##テストユーザー
+## 公開先
+http://yura0418.php.xdomain.jp/index.php
+[テストユーザ]
 ユーザ名：岩塚由楽
 pass:yura
 
